@@ -11,16 +11,16 @@
 子图定义由几个文件组成：
 
 - `subgraph.yaml`：包含*子图清单*的 YAML 文件**
-- `schema.graphql`: 一个 GraphQL 模式，它定义了为你的子图存储了什么数据，以及如何通过 GraphQL 查询它
-- `AssemblyScript Mappings`：从以太坊中的事件数据转换为模式中定义的实体的[AssemblyScript](https://github.com/AssemblyScript/assemblyscript)代码（例如`mapping.ts`在本教程中）
+- `schema.graphql`: 一个 GraphQL Schema，它定义了为你的子图存储了什么数据，以及如何通过GraphQL查询它（数据）
+- `AssemblyScript Mappings`：从以太坊中的事件数据转换为Schema中定义的实体的[AssemblyScript](https://github.com/AssemblyScript/assemblyscript)代码（例如在本教程中的`mapping.ts`）
 
-在详细了解清单文件的内容之前，您需要安装 构建和部署子图所需的[Graph CLI](https://github.com/graphprotocol/graph-cli)。
+在详细了解清单文件的内容之前，您需要安装构建和部署子图所需的[Graph CLI](https://github.com/graphprotocol/graph-cli)。
 
-## 安装图形 CLI
+## 安装The Graph CLI
 
-Graph CLI 是用 JavaScript 编写的，您需要安装 [yarn](https://yarnpkg.com/lang/en/docs/install/#centos-stable)或 [npm](https://www.npmjs.com/get-npm)才能使用它；假设您有`yarn`以下内容。安装的详细说明`yarn` 可以在 [graph-cli repo中找到](https://github.com/graphprotocol/graph-cli/wiki/Installation-on-different-operating-systems)
+Graph CLI是用JavaScript编写的，您需要安装 [yarn](https://yarnpkg.com/lang/en/docs/install/#centos-stable)或 [npm](https://www.npmjs.com/get-npm)才能使用它；以下内容假设您已经安装`yarn`。安装的详细说明`yarn` 可以在 [graph-cli repo中找到](https://github.com/graphprotocol/graph-cli/wiki/Installation-on-different-operating-systems)
 
-完成后`yarn`，通过运行安装 Graph CLI
+一旦你完成安装`yarn`，通过运行安装 Graph CLI
 
 ```
 yarn global add @graphprotocol/graph-cli
@@ -30,7 +30,7 @@ yarn global add @graphprotocol/graph-cli
 
 该`graph init`命令可用于从任何公共以太坊网络上的现有合约或[示例子图](https://github.com/graphprotocol/example-subgraph)设置新的子图项目 。
 
-### 从现有合同
+### 从现有合约
 
 If you already have a smart contract deployed to Ethereum mainnet or one of the testnets, bootstrapping a new subgraph from this contract can be a good way to get started.
 
